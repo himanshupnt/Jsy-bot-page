@@ -1,0 +1,209 @@
+@import "../../bower_components/susy/sass/susy";
+@import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../../bower_components/normalize-css/normalize";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+$susy: (
+  columns: 8,
+  container: 1140px,
+  global-box-sizing: border-box,
+//  debug: (image: show)
+);
+
+$tablet: 600px;
+
+$desktop: 980px;
+
+@include border-box-sizing;
+
+@mixin cf {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+html {
+//  font-size: 15px;
+//  line-height: 1.4;
+  font-family: 'Titillium Web', sans-serif;
+  color: #313131;
+  background-color:ghostwhite;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr {
+  margin: 0;
+}
+
+.page-wrap {
+  @include container();
+  overflow: hidden;
+//  height: 100vh;
+  // Breakpoint for tablet view
+  @include susy-breakpoint($tablet, 9) {
+    @include show-grid();
+  }
+
+  // Breakpoint for desktop view
+  @include susy-breakpoint($desktop, 16) {
+    @include show-grid();
+  }
+}
+
+.jumbotron {
+  max-width: 100%;
+  background-color: #5ea991;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#page-header {
+  padding-bottom: 30px;
+  background-color: ghostwhite;
+}
+
+.logo-container {
+  max-width: span(4); 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @include susy-breakpoint($tablet){
+    max-width: span(3 of 9);
+  }
+  @include susy-breakpoint($desktop){
+    max-width: span(4 of 16);
+  }
+}
+
+.logo {
+  padding: 10px;
+}
+
+
+.hero-content {
+  max-width: span(6);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.hero-text {
+  font-size: 45px;
+  color: #9B489B;
+}
+
+.regular-text {
+  color: #595959;
+  font-size: 22px;
+  padding: 8px;
+  margin: 0;
+}
+
+#hero-sub-text {
+  margin: 22px 0 30px 0;
+}
+
+.add-to-slack {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 3px;
+  border: none;
+  color: floralwhite;
+  background-color: darkviolet;
+} yb nmnJNU6
+
+.btn-icon-left {
+  padding-right: 8px;
+  font-size: 2em;
+  vertical-align: middle;
+}
+
+.about-me-section {
+  @include cf;
+  padding-top: 20px;
+//  background-color: #5ea991;
+}
+
+.about-me-text {
+  color: floralwhite;
+  line-height: 25px;
+  font-size: 18px;
+}
+
+.sub-heading {
+  font-weight: 700;
+  color: white;
+  padding-top: 30px; //only for mobile and tablet views- to do
+}
+
+.about-me-article {
+  max-width: span(7);
+//  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @include susy-breakpoint($tablet){
+    max-width: span(7 of 9);
+    p {
+      font-size: 22px !important;
+    }
+  }
+  @include susy-breakpoint($desktop){
+    @include span(7 of 16);
+  }
+}
+
+.image-display {
+  max-width: span(7);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  @include susy-breakpoint($tablet){
+    max-width: span(5 of 9); 
+  }
+  @include susy-breakpoint($desktop){
+    @include span(5 of 16);
+  }
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 18px;
+  }
+  h2 {
+    font-size: 25px !important;
+  }
+}
+
+.how-to-use {
+  padding: 20px;
+  color: #595959;
+  max-width: span(7);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.how-to-use-sub-heading {
+  padding: 15px;
+}
+
+.footer-text {
+  color: floralwhite;
+  max-width: span(7);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 14px;
+  word-spacing: 5px;
+  a {
+    text-decoration: none;
+    color: yellow;
+  }
+}
